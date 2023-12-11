@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .scissors-container {
+      perspective: 1000px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .scissors {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 5s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+
+    .scissor-part {
+      position: absolute;
+      width: 20px;
+      height: 100px;
+      background-color: #3498db;
+      transform-origin: 50% 0;
+    }
+
+    .scissor-part.left {
+      left: 50%;
+      transform: translateX(-50%) rotateY(90deg);
+    }
+
+    .scissor-part.right {
+      left: 50%;
+      transform: translateX(-50%) rotateY(-90deg);
+    }
+
+    .scissor-handle {
+      position: absolute;
+      width: 20px;
+      height: 60px;
+      background-color: #e74c3c;
+      transform-origin: 50% 0;
+      top: 20px;
+    }
+
+    .scissor-handle.left {
+      left: 50%;
+      transform: translateX(-50%) rotateY(90deg);
+    }
+
+    .scissor-handle.right {
+      left: 50%;
+      transform: translateX(-50%) rotateY(-90deg);
+    }
+  </style>
+</head>
+<body>
